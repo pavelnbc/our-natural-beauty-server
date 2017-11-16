@@ -1,0 +1,32 @@
+[
+  {
+    "direction": "/ordering",
+    "icon": "shopping-basket",
+    "title": "Place a new order"
+  },
+  {
+    "direction": "/reordering",
+    "icon": "refresh",
+    "title": "Refill your previous order"
+  },
+  {
+    "direction": "/policies",
+    "icon": "exclamation-circle",
+    "title": "Our policies"
+  },
+  {
+    "direction": "/FAQ",
+    "icon": "question-circle",
+    "title": "FAQ"
+  },
+  {
+    "direction": "/discounts",
+    "icon": "tags",
+    "title": "Discounts"
+  },
+  {
+    "direction": "/contact",
+    "icon": "envelope",
+    "title": "Contact Us"
+  }
+]

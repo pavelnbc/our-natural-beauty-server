@@ -1,0 +1,193 @@
+[
+  {
+    "slug": "generic-viagra",
+    "title": "Generic Viagra",
+    "category": "ED",
+    "ingredient": "Sildenafil Citrate",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "generic-cialis",
+    "title": "Generic Cialis",
+    "category": "ED",
+    "ingredient": "Tadalafil",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "kamagra-brand",
+    "title": "Kamagra®",
+    "category": "ED",
+    "ingredient": "Sildenafil Citrate",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "generic-levitra",
+    "title": "Generic Levitra",
+    "category": "ED",
+    "ingredient": "Vardenafil",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "generic-lasix",
+    "title": "Generic Lasix",
+    "category": "ED",
+    "ingredient": "Furosemide",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "generic-propecia",
+    "title": "Generic Propecia",
+    "category": "ED",
+    "ingredient": "Finasteride",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "generic-priligy",
+    "title": "Generic Priligy",
+    "category": "ED",
+    "ingredient": "Dapoxetine",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "albuterol",
+    "title": "Albuterol",
+    "category": "respiratory-disorders",
+    "ingredient": "Salbutamol",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "bambec",
+    "title": "Bambec",
+    "category": "respiratory-disorders",
+    "ingredient": "Bambuterol",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "deltasone",
+    "title": "Deltasone",
+    "category": "respiratory-disorders",
+    "ingredient": "Prednisone",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "serevent",
+    "title": "Serevent",
+    "category": "respiratory-disorders",
+    "ingredient": "Salmeterol",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "Celexa",
+    "title": "Celexa",
+    "category": "antidepressants",
+    "ingredient": "Citalopram",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "effexor",
+    "title": "Effexor",
+    "category": "antidepressants",
+    "ingredient": "Venlafaxine",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "lexapro",
+    "title": "Lexapro",
+    "category": "antidepressants",
+    "ingredient": "Escitalopram",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "thorazine",
+    "title": "Thorazine",
+    "category": "antidepressants",
+    "ingredient": "Chlorpromazine",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "Paxil",
+    "title": "Paxil",
+    "category": "antidepressants",
+    "ingredient": "Paroxetine",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "lipitor",
+    "title": "Lipitor",
+    "category": "cholesterol-meds",
+    "ingredient": "Atorvastatin",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "mevacor",
+    "title": "Mevacor",
+    "category": "cholesterol-meds",
+    "ingredient": "Lovastatin",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "zetia",
+    "title": "Zetia",
+    "category": "cholesterol-meds",
+    "ingredient": "Ezetimibe",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "zocor",
+    "title": "Zocor",
+    "category": "cholesterol-meds",
+    "ingredient": "Simvastatin",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  },
+  {
+    "slug": "tricor",
+    "title": "Tricor",
+    "category": "cholesterol-meds",
+    "ingredient": "Fenofibrate",
+    "dosage": [10, 25, 50, 100, 150, 200],
+    "quantity": [10, 30, 50, 100, 120, 180],
+    "price": [1.73, 2.08, 2.33, 3.17, 4, 4.75, 7]
+  }
+]
+
+

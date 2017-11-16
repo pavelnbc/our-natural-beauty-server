@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ED",
+    "title": "ED Medications"
+  },
+  {
+    "id": "respiratory-disorders",
+    "title": "Respiratory-disorders"
+  },
+  {
+    "id": "antidepressants",
+    "title": "Antidepressant Drugs"
+  },
+  {
+    "id": "cholesterol-meds",
+    "title": "Cholesterol Medications"
+  }
+]
