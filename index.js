@@ -47,23 +47,23 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/api/v1/products", (req, res) => {
+app.get("https://our-natural-beauty-server.herokuapp.com/api/v1/products", (req, res) => {
     res.send(products);
 });
 
-app.get("/api/v1/categories", (req, res) => {
+app.get("https://our-natural-beauty-server.herokuapp.com/api/v1/categories", (req, res) => {
     res.send(categories);
 });
 
-app.get("/api/v1/homePageSlides", (req, res) => {
+app.get("https://our-natural-beauty-server.herokuapp.com/api/v1/homePageSlides", (req, res) => {
     res.send(homePageSlides)
 });
 
-app.get("/api/v1/menuLinks", (req, res) => {
+app.get("https://our-natural-beauty-server.herokuapp.com/api/v1/menuLinks", (req, res) => {
     res.send(menuLinks)
 });
 
-app.get('/api/v1/cartData', (req, res) => {
+app.get('https://our-natural-beauty-server.herokuapp.com/api/v1/cartData', (req, res) => {
     var data = {
         totalPrice: totalPrice,
         productCart: productCart
@@ -71,7 +71,7 @@ app.get('/api/v1/cartData', (req, res) => {
     res.send(data);
 });
 
-app.post('/api/v1/cartData', (req, res) => {
+app.post('https://our-natural-beauty-server.herokuapp.com/api/v1/cartData', (req, res) => {
     let good = req.body.orderItem;
     good.id = productCart.length;
 
@@ -81,7 +81,7 @@ app.post('/api/v1/cartData', (req, res) => {
     res.send(good)
 });
 
-app.delete('/api/v1/cartData/:id', (req, res) => {
+app.delete('https://our-natural-beauty-server.herokuapp.com/api/v1/cartData/:id', (req, res) => {
     const index = productCart.findIndex((product) => {
         return product.id == req.params.id
     });
