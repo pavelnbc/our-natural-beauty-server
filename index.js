@@ -22,30 +22,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use((req, res, next) => {
-    res.setHeader('Cache-Control', 'no-cache');
-    next();
-});
-
 // app.use((req, res, next) => {
-//     let origins = [
-//         'https://our-natural-beauty.herokuapp.com',
-//         'https://www.our-natural-beauty.herokuapp.com',
-//         'https://localhost:3000'
-//     ];
-//
-//     for(var i = 0; i < origins.length; i++){
-//         var origin = origins[i];
-//
-//         if(req.headers.origin.indexOf(origin) > -1){
-//             res.header('Access-Control-Allow-Origin', req.headers.origin);
-//         }
-//     }
-//
-//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.setHeader('Cache-Control', 'no-cache');
 //     next();
 // });
+
+app.use((req, res, next) => {
+    let origins = [
+        'https://our-natural-beauty.herokuapp.com',
+        'https://www.our-natural-beauty.herokuapp.com',
+        'https://localhost:3000'
+    ];
+
+    for(var i = 0; i < origins.length; i++){
+        var origin = origins[i];
+
+        if(req.headers.origin.indexOf(origin) > -1){
+            res.header('Access-Control-Allow-Origin', req.headers.origin);
+        }
+    }
+
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 app.get("/api/v1/products", (req, res) => {
     res.send(products);
