@@ -30,7 +30,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use((req, res, next) => {
     let origins = [
         'https://our-natural-beauty.herokuapp.com',
-        'https://www.our-natural-beauty.herokuapp.com'
+        'https://www.our-natural-beauty.herokuapp.com',
+        'https://localhost:3000'
     ];
 
     for(var i = 0; i < origins.length; i++){
