@@ -68,6 +68,8 @@ app.get('/api/v1/cartData', (req, res) => {
         totalPrice: totalPrice,
         productCart: productCart
     };
+
+    console.log(data);
     res.send(data);
 });
 
