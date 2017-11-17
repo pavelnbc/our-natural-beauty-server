@@ -34,10 +34,10 @@ app.use((req, res, next) => {
         'https://localhost:3000'
     ];
 
-    for(var i = 0; i < origins.length; i++){
-        var origin = origins[i];
+    for(let i = 0; i < origins.length; i++){
+        let origin = origins[i];
 
-        if(req.headers.origin.indexOf(origin) > -1){
+        if(req.headers.origin.indexOf(origin) !== -1){
             res.header('Access-Control-Allow-Origin', req.headers.origin);
         }
     }
