@@ -62,9 +62,7 @@ const corsOptions = {
     }
 };
 
-
-
-app.get("/api/v1/products", cors(corsOptions), (req, res) => {
+app.get("/api/v1/products", (req, res) => {
     res.send(products);
 });
 
