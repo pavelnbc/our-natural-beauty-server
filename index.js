@@ -23,32 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use((req, res, next) => {
-//     res.setHeader('Cache-Control', 'no-cache');
-//     next();
-// });
-
-// app.use((req, res, next) => {
-//     let origins = [
-//         'https://our-natural-beauty.herokuapp.com',
-//         'https://www.our-natural-beauty.herokuapp.com',
-//         'http://localhost:3000'
-//     ];
-//
-//     for(let i = 0; i < origins.length; i++){
-//         let origin = origins[i];
-//
-//         if(req.headers.origin.indexOf(origin) !== -1){
-//             res.header('Access-Control-Allow-Origin', req.headers.origin);
-//         }
-//     }
-//
-//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.setHeader('Cache-Control', 'no-cache');
-//     next();
-// });
-
 app.use(cors());
 
 const whitelist = ['https://our-natural-beauty.herokuapp.com', 'https://www.our-natural-beauty.herokuapp.com'];
@@ -62,23 +36,25 @@ const corsOptions = {
     }
 };
 
-app.get("/api/v1/products", (req, res) => {
+
+
+app.get("/api/v1/products", cors(corsOptions), (req, res) => {
     res.send(products);
 });
 
-app.get("/api/v1/categories", (req, res) => {
+app.get("/api/v1/categories", cors(corsOptions), (req, res) => {
     res.send(categories);
 });
 
-app.get("/api/v1/homePageSlides", (req, res) => {
+app.get("/api/v1/homePageSlides", cors(corsOptions), (req, res) => {
     res.send(homePageSlides)
 });
 
-app.get("/api/v1/menuLinks", (req, res) => {
+app.get("/api/v1/menuLinks", cors(corsOptions), (req, res) => {
     res.send(menuLinks)
 });
 
-app.get('/api/v1/cartData', (req, res) => {
+app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
     var data = {
         totalPrice: totalPrice,
         productCart: productCart
@@ -88,7 +64,7 @@ app.get('/api/v1/cartData', (req, res) => {
     res.send(data);
 });
 
-app.post('/api/v1/cartData', (req, res) => {
+app.post('/api/v1/cartData', cors(corsOptions), (req, res) => {
     let good = req.body.orderItem;
     good.id = productCart.length;
 
@@ -98,7 +74,7 @@ app.post('/api/v1/cartData', (req, res) => {
     res.send(good)
 });
 
-app.delete('/api/v1/cartData/:id', (req, res) => {
+app.delete('/api/v1/cartData/:id', cors(corsOptions), (req, res) => {
     const index = productCart.findIndex((product) => {
         return product.id == req.params.id
     });
