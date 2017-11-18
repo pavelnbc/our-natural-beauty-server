@@ -64,7 +64,7 @@ const corsOptions = {
 
 
 
-app.get("/api/v1/products", (req, res) => {
+app.get("/api/v1/products", cors(corsOptions), (req, res) => {
     res.send(products);
 });
 
