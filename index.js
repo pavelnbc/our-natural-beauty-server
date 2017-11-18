@@ -63,13 +63,13 @@ app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
         productCart: productCart
     };
 
-    clearTimeout(cartTimeoutID);
-
-    const cartTimeoutID = setTimeout(() => {
-        totalPrice = 0;
-        productCart = [];
-        console.log('yse');
-    }, 25000);
+    // clearTimeout(cartTimeoutID);
+    //
+    // const cartTimeoutID = setTimeout(() => {
+    //     totalPrice = 0;
+    //     productCart = [];
+    //     console.log('yse');
+    // }, 25000);
 
     console.log(data);
     res.send(data);
