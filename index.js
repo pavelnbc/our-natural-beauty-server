@@ -49,18 +49,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     next();
 // });
 
-// app.use(cors());
-//
-// const whitelist = ['https://our-natural-beauty.herokuapp.com', 'https://www.our-natural-beauty.herokuapp.com'];
-// const corsOptions = {
-//     origin: function (origin, callback) {
-//         if (whitelist.indexOf(origin) !== -1) {
-//             callback(null, true)
-//         } else {
-//             callback(new Error('Not allowed by CORS'))
-//         }
-//     }
-// };
+app.use(cors());
+
+const whitelist = ['https://our-natural-beauty.herokuapp.com', 'https://www.our-natural-beauty.herokuapp.com'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+};
 
 
 
