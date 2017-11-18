@@ -25,15 +25,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-const whitelist = [
+const access = [
     'https://our-natural-beauty.herokuapp.com',
     'https://www.our-natural-beauty.herokuapp.com',
+    'http://our-natural-beauty.herokuapp.com',
+    'http://www.our-natural-beauty.herokuapp.com',
     'http://localhost:3000'
 ];
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if (whitelist.indexOf(origin) !== -1) {
+        if (access.indexOf(origin) !== -1) {
             callback(null, true)
         } else {
             callback(new Error('Not allowed by CORS'))
