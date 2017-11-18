@@ -25,7 +25,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-const whitelist = ['https://our-natural-beauty.herokuapp.com', 'https://www.our-natural-beauty.herokuapp.com'];
+const whitelist = [
+    'https://our-natural-beauty.herokuapp.com',
+    'https://www.our-natural-beauty.herokuapp.com',
+    'https://localhost:3000'
+];
 const corsOptions = {
     origin: function (origin, callback) {
         if (whitelist.indexOf(origin) !== -1) {
@@ -59,6 +63,13 @@ app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
         totalPrice: totalPrice,
         productCart: productCart
     };
+
+    clearTimeout(cartTimeoutID);
+
+    const cartTimeoutID = setTimeout(() => {
+       totalPrice = 0;
+       productCart = [];
+    }, 5000);
 
     console.log(data);
     res.send(data);
