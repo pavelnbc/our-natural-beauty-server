@@ -59,17 +59,17 @@ app.get("/api/v1/menuLinks", cors(corsOptions), (req, res) => {
 });
 
 app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
-    var data = {
+    const data = {
         totalPrice: totalPrice,
         productCart: productCart
     };
 
-    // clearTimeout(cartTimeoutID);
-    //
-    // const cartTimeoutID = setTimeout(() => {
-    //    totalPrice = 0;
-    //    productCart = [];
-    // }, 25000);
+    clearTimeout(cartTimeoutID);
+
+    let cartTimeoutID = setTimeout(() => {
+       totalPrice = 0;
+       productCart = [];
+    }, 25000);
 
     console.log(data);
     res.send(data);
