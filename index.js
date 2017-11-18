@@ -64,12 +64,12 @@ app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
         productCart: productCart
     };
 
-    clearTimeout(cartTimeoutID);
-
-    const cartTimeoutID = setTimeout(() => {
-       totalPrice = 0;
-       productCart = [];
-    }, 5000);
+    // clearTimeout(cartTimeoutID);
+    //
+    // const cartTimeoutID = setTimeout(() => {
+    //    totalPrice = 0;
+    //    productCart = [];
+    // }, 25000);
 
     console.log(data);
     res.send(data);
