@@ -5,6 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const products = require('./api/products');
@@ -27,25 +28,41 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     next();
 // });
 
-app.use((req, res, next) => {
-    let origins = [
-        'https://our-natural-beauty.herokuapp.com',
-        'https://www.our-natural-beauty.herokuapp.com',
-        'http://localhost:3000'
-    ];
+// app.use((req, res, next) => {
+//     let origins = [
+//         'https://our-natural-beauty.herokuapp.com',
+//         'https://www.our-natural-beauty.herokuapp.com',
+//         'http://localhost:3000'
+//     ];
+//
+//     for(let i = 0; i < origins.length; i++){
+//         let origin = origins[i];
+//
+//         if(req.headers.origin.indexOf(origin) !== -1){
+//             res.header('Access-Control-Allow-Origin', req.headers.origin);
+//         }
+//     }
+//
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.setHeader('Cache-Control', 'no-cache');
+//     next();
+// });
 
-    for(let i = 0; i < origins.length; i++){
-        let origin = origins[i];
+app.use(cors());
 
-        if(req.headers.origin.indexOf(origin) !== -1){
-            res.header('Access-Control-Allow-Origin', req.headers.origin);
+const whitelist = ['https://our-natural-beauty.herokuapp.com', 'https://www.our-natural-beauty.herokuapp.com'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
         }
     }
+};
 
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
+
 
 app.get("/api/v1/products", (req, res) => {
     res.send(products);
