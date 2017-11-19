@@ -27,9 +27,7 @@ app.use(cors());
 
 const access = [
     'https://our-natural-beauty.herokuapp.com',
-    'https://www.our-natural-beauty.herokuapp.com',
     'http://our-natural-beauty.herokuapp.com',
-    'http://www.our-natural-beauty.herokuapp.com',
     'http://localhost:3000'
 ];
 
