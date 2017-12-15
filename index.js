@@ -25,21 +25,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-const access = [
-    'https://our-natural-beauty.herokuapp.com',
-    'http://our-natural-beauty.herokuapp.com',
-    'http://localhost:3000'
-];
+// const access = [
+//     'https://our-natural-beauty.herokuapp.com',
+//     'http://our-natural-beauty.herokuapp.com',
+//     'http://localhost:3000'
+// ];
 
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (access.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error('Not allowed by CORS'))
-        }
-    }
-};
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//         if (access.indexOf(origin) !== -1) {
+//             callback(null, true)
+//         } else {
+//             callback(new Error('Not allowed by CORS'))
+//         }
+//     }
+// };
 
 app.get("/api/v1/products", cors(corsOptions), (req, res) => {
     res.send(products);
