@@ -49,15 +49,15 @@ app.get("/api/v1/categories", (req, res) => {
     res.send(categories);
 });
 
-app.get("/api/v1/homePageSlides", cors(corsOptions), (req, res) => {
+app.get("/api/v1/homePageSlides", (req, res) => {
     res.send(homePageSlides)
 });
 
-app.get("/api/v1/menuLinks", cors(corsOptions), (req, res) => {
+app.get("/api/v1/menuLinks", (req, res) => {
     res.send(menuLinks)
 });
 
-app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
+app.get('/api/v1/cartData', (req, res) => {
     const data = {
         totalPrice: totalPrice,
         productCart: productCart
@@ -75,7 +75,7 @@ app.get('/api/v1/cartData', cors(corsOptions), (req, res) => {
     res.send(data);
 });
 
-app.post('/api/v1/cartData', cors(corsOptions), (req, res) => {
+app.post('/api/v1/cartData', (req, res) => {
     let good = req.body.orderItem;
     good.id = productCart.length;
 
@@ -85,7 +85,7 @@ app.post('/api/v1/cartData', cors(corsOptions), (req, res) => {
     res.send(good)
 });
 
-app.delete('/api/v1/cartData/:id', cors(corsOptions), (req, res) => {
+app.delete('/api/v1/cartData/:id', (req, res) => {
     const index = productCart.findIndex((product) => {
         return product.id == req.params.id
     });
