@@ -14,6 +14,7 @@ const homePageSlides = require('./api/homePageSlides');
 const menuLinks = require('./api/menuLinks');
 let productCart = [];
 let totalPrice = 0;
+let id = 0;
 
 const app = express();
 
@@ -77,7 +78,7 @@ app.get('/api/v1/cartData', (req, res) => {
 
 app.post('/api/v1/cartData', (req, res) => {
     let good = req.body.orderItem;
-    good.id = productCart.length;
+    good.id = id++;
 
     productCart.push(good);
     totalPrice += good.price;
