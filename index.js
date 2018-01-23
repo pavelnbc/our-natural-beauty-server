@@ -83,6 +83,8 @@ app.post('/api/v1/cartData', (req, res) => {
     productCart.push(good);
     totalPrice += good.price;
 
+    console.log(productCart);
+
     res.send(good)
 });
 
@@ -98,6 +100,15 @@ app.delete('/api/v1/cartData/:id', (req, res) => {
 
     res.sendStatus(204);
 });
+
+setInterval(() => {
+    console.log("hello");
+    console.log(productCart);
+    productCart = [];
+    console.log(productCart);
+}, 10000);
+
+
 
 /*
     app.get('/api/products', (req, res) => {
