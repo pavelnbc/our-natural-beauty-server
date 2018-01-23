@@ -15,6 +15,7 @@ const menuLinks = require('./api/menuLinks');
 let productCart = [];
 let totalPrice = 0;
 let id = 0;
+let cartTimeout;
 
 const app = express();
 
@@ -64,14 +65,6 @@ app.get('/api/v1/cartData', (req, res) => {
         productCart: productCart
     };
 
-    // clearTimeout(cartTimeoutID);
-    //
-    // const cartTimeoutID = setTimeout(() => {
-    //     totalPrice = 0;
-    //     productCart = [];
-    //     console.log('yse');
-    // }, 25000);
-
     console.log(data);
     res.send(data);
 });
@@ -83,13 +76,19 @@ app.post('/api/v1/cartData', (req, res) => {
     productCart.push(good);
     totalPrice += good.price;
 
-    console.log(productCart);
+    clearTimeout(cartTimeout);
+
+    cartTimeout = setTimeout(() => {
+        productCart = [];
+        totalPrice = 0;
+    }, 864e5);
 
     res.send(good)
 });
 
 app.delete('/api/v1/cartData/:id', (req, res) => {
     const index = productCart.findIndex((product) => {
+        console.log('hello');
         return product.id == req.params.id
     });
 
@@ -101,12 +100,7 @@ app.delete('/api/v1/cartData/:id', (req, res) => {
     res.sendStatus(204);
 });
 
-setInterval(() => {
-    console.log("hello");
-    console.log(productCart);
-    productCart = [];
-    console.log(productCart);
-}, 10000);
+
 
 
 
