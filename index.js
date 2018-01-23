@@ -81,7 +81,7 @@ app.post('/api/v1/cartData', (req, res) => {
     cartTimeout = setTimeout(() => {
         productCart = [];
         totalPrice = 0;
-    }, 864e5);
+    }, 108e4);
 
     res.send(good)
 });
