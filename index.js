@@ -7,6 +7,7 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+var MongoClient = require('mongodb').MongoClient;
 
 const products = require('./api/products');
 const categories = require('./api/categories');
@@ -18,6 +19,7 @@ let id = 0;
 let cartTimeout;
 
 const app = express();
+let db;
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -55,7 +57,7 @@ app.get("/api/v1/homePageSlides", (req, res) => {
     res.send(homePageSlides)
 });
 
-app.get("/api/v1/menuLinks", (req, res) => {
+app.get("/v1/menuLinks", (req, res) => {
     res.send(menuLinks)
 });
 
@@ -88,7 +90,6 @@ app.post('/api/v1/cartData', (req, res) => {
 
 app.delete('/api/v1/cartData/:id', (req, res) => {
     const index = productCart.findIndex((product) => {
-        console.log('hello');
         return product.id == req.params.id
     });
 
@@ -100,67 +101,7 @@ app.delete('/api/v1/cartData/:id', (req, res) => {
     res.sendStatus(204);
 });
 
-
-
-
-
-/*
-    app.get('/api/products', (req, res) => {
-     // var data = {
-     //     products,
-     //     categories,
-     //     mainPageSlides,
-     //     menuLinks,
-     //     totalPrice,
-     //     productCart
-     // };
-
-     res.send(productCart);
-     });
-
-     app.post('/api/products', (req, res) => {
-     let good = req.body;
-     console.log(good);
-     console.log(req.body);
-
-     good.id = productCart.length
-     productCart.push(good);
-     totalPrice += good.price;
-
-     res.send(good)
-     });
-
-     app.delete('/api/products/:id', (req, res) => {
-     const product = productCart.find((product) => {
-     return product.id != req.params.id
-     });
-
-     productCart = productCart.filter((product) => {
-     return product.id != req.params.id
-     });
-
-     res.send(product)
-     });
-
-     app.get('/api/products/:id', (req, res) => {
-     const product = productCart.find((product) => {
-     return product.id != req.params.id
-     });
-
-     res.send(product)
-     });
-
-     app.put('/api/products/:id', (req, res) => {
-     const productIndex = productCart.findIndex((product) => {
-     return product.id != req.params.id
-     });
-     const productId = productCart[productIndex].id
-     productCart[productIndex] = req.body
-     productCart[productIndex].id = productId
-     res.send(product)
-     });
- */
-
-
-
 app.listen(app.get('port'), () => console.log(`Server is listening: http://localhost:${app.get('port')}`));
+
+
+
