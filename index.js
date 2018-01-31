@@ -57,7 +57,7 @@ app.get("/api/v1/homePageSlides", (req, res) => {
     res.send(homePageSlides)
 });
 
-app.get("/v1/menuLinks", (req, res) => {
+app.get("/api/v1/menuLinks", (req, res) => {
     res.send(menuLinks)
 });
 
