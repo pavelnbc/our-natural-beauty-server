@@ -1,8 +1,13 @@
 [
   {
-    "direction": "/ordering",
-    "icon": "shopping-basket",
-    "title": "Place a new order"
+  "direction": "/",
+  "icon": "home",
+  "title": "Main page"
+  },
+  {
+  "direction": "/ordering",
+  "icon": "shopping-basket",
+  "title": "Place a new order"
   },
   {
     "direction": "/reordering",
